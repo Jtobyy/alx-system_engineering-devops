@@ -1,0 +1,6 @@
+#!/bin/bash
+var = $(id -n hello )
+if [ $var == "guillaume" ]
+then
+sudo chown betty hello;
+fi
