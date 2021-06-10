@@ -1,2 +1,2 @@
 #!/bin/bash
-var=$(stat -c%a hello) | chmod var olleh
+chmod --reference=hello olleh
