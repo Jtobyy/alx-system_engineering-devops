@@ -1,2 +1,3 @@
 #!/bin/bash
-mkdir dir_holberton | chmod 751 dir_holberton &
+install -m 751 -d ./dir_holberton
+
