@@ -1,0 +1,5 @@
+#!/bin/bash
+if id -n hello == guillaume
+then
+	sudo chown betty hello;
+fi
