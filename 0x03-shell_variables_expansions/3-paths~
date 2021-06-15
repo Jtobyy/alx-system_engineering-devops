@@ -1,0 +1,3 @@
+#!/bin/bash
+echo $(($(echo $PATH | grep ":/" -o | grep -c ":/")+1))
+
