@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -e {a..z}{a..z}\\n | head -n -1 | sed /oo/d - | wc -l
