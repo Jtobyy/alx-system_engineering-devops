@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -e \\n{a..z}{a..z} | fgrep -v "oo" | tail -n +2
