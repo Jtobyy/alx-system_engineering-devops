@@ -1,0 +1,4 @@
+#!/bin/bash
+cat /etc/passwd
+cp 2-hellofile 3-twofiles
+cat /etc/passwd /etc/hosts
