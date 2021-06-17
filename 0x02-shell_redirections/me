@@ -1,0 +1,31 @@
+total 100
+drwxr-xr-x 2 root root 4096 Jun 17 03:30 .
+drwxr-xr-x 7 root root  160 Jun 16 01:44 ..
+-rwxr-xr-x 1 root root   35 Jun 16 09:40 0-hello_world
+-rwxr-xr-x 1 root root   38 Jun 16 09:40 0-hello_world~
+-rwxr-xr-x 1 root root   36 Jun 16 14:16 10-no_more_js
+-rwxr-xr-x 1 root root   38 Jun 16 12:16 10-no_more_js~
+-rwxr-xr-x 1 root root   31 Jun 16 12:44 11-directories
+-rwxr-xr-x 1 root root   30 Jun 16 12:37 11-directories~
+-rwxr-xr-x 1 root root   31 Jun 16 09:40 1-confused_smiley
+-rwxr-xr-x 1 root root   28 Jun 16 09:40 2-hellofile
+-rwxr-xr-x 1 root root   31 Jun 16 09:40 2-hellofile~
+lrwxrwxrwx 1 root root   23 Jun 16 02:45 .#3-twofiles -> root@4b512e8f30ad.10426
+-rwxr-xr-x 1 root root   39 Jun 16 09:40 3-twofiles
+-rwxr-xr-x 1 root root   81 Jun 16 09:40 3-twofiles~
+-rwxr-xr-x 1 root root   32 Jun 16 09:40 4-lastlines
+-rwxr-xr-x 1 root root   59 Jun 16 09:40 4-lastlines~
+-rwxr-xr-x 1 root root   29 Jun 16 09:40 5-firstlines
+-rwxr-xr-x 1 root root   30 Jun 16 09:40 5-firstlines~
+lrwxrwxrwx 1 root root   23 Jun 16 09:40 .#6-third_line -> root@4b512e8f30ad.10801
+-rwxr-xr-x 1 root root   22 Jun 16 10:44 6-third_line
+-rwxr-xr-x 1 root root   47 Jun 16 09:40 6-third_line~
+lrwxrwxrwx 1 root root   23 Jun 16 11:07 .#7-file -> root@4b512e8f30ad.11262
+-rwxr-xr-x 1 root root   97 Jun 16 11:44 7-file
+-rwxr-xr-x 1 root root   95 Jun 16 11:42 7-file~
+-rwxr-xr-x 1 root root   36 Jun 16 12:50 8-cwd_state
+-rwxr-xr-x 1 root root   22 Jun 16 11:55 8-cwd_state~
+-rwxr-xr-x 1 root root   38 Jun 16 12:06 9-duplicate_last_line
+-rwxr-xr-x 1 root root   37 Jun 16 12:02 9-duplicate_last_line~
+-rw-r--r-- 1 root root    0 Jun 17 03:30 me
+-rw-r--r-- 1 root root   27 Jun 16 09:40 README.md
