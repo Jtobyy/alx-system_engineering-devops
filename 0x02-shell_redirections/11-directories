@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ld -Ra | wc -l
+echo $(($(find . -type d | wc -l)-1))

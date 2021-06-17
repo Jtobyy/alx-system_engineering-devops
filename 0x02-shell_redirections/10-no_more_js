@@ -1,2 +1,2 @@
 #!/bin/bash
-rm $(ls -lR | grep ^d )
+rm $(find . -name '*.js' -type f)
