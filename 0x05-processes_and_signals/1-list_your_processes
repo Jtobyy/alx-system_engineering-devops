@@ -4,4 +4,4 @@
 #-u for user-oriented format
 #-H for process Heirarchy(foresT)
 #-e for all users, including thos without tty
-ps -uHe
+ps -guH
