@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#reconfigures an ubuntu server by
+#changing its localhost ip address from 127.0.0.1 to
+#127.0.0.2 and its facebook.com ip address from 157.240.11.35
+#to 8.8.8.8
+
+cp /etc/hosts ./hosts.new
+sed -i s/127.0.0.1/127.0.0.2/ ./hosts.new
+sed -i s/157.240.11.35/8.8.8.8/ ./hosts.new
+cp -f ./hosts.new /etc/hosts
