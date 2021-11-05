@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Displyas all active IPV IPs on the machine it's executed on
+
+netstat -n --protocol=inet | tail -n +3 | tr -s " " " " | cut -d " " -f 4 | cut -d ":" -f 1
