@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-# displays "Best School" 10 times.
-
-display=("Best School" "Best School" "Best School" "Best School" "Best School" "Best School" "Best School" "Best School" "Best School" "Best School")
-for i in "${display[@]}";
-do
-	echo "$i"
-done
