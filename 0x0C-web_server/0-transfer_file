@@ -9,9 +9,10 @@ then
     exit
 fi
 
-file_path = $1
-dest_ip = $2
-username = $3
-ssh_priv_key = $4
+file_path=$1;
+dest_ip=$2;
+username=$3;
+ssh_priv_key=$4;
+path='~/';
 
-scp -i $ssh_priv_key $file_path $username@to_host:$dest_ip
+scp -i $ssh_priv_key $file_path $username@$dest_ip:$path
