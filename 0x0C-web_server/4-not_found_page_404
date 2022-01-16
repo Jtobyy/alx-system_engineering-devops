@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+#Configures a new Ubuntu machine to run Nginx
+
+#install Nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+#firewall configuration
+#sudo ufw enable
+#sudo ufw allow 'Nginx HTTP'
+
+#When querying Nginx at its root / with a GET
+#request (requesting a page) using curl, it must
+#return a page that contains the string Hello World!
+
+# get the default path for nginx static files
+val=$(grep -m 1 'root /' /etc/nginx/sites-enabled/default | tr -d ";" | cut -f 1 -d " " --complement)
+
+# replace the index.html text the with required text
+echo -e "Hello World!\n" > "$val"/index.html
+# just in case
+echo -e "Hello World!\n" > /var/www/html/index.html
+
+#makes sure default listens at port 80;
+sed -i 's/listen [0-9]* default_server/listen 80 default_server/' /etc/nginx/sites-enabled/default
+
+#does the same for the ipv6 address
+sed -i 's/listen \[::\]:[0-9]* default_server ipv6only=on/listen \[::\]:80 default_server ipv6only=on/' /etc/nginx/sites-enabled/default
+
+#edits the default in nginx/sites-enabled and allows redirection
+#from /redirect_me
+line=$(grep -n server_name /etc/nginx/sites-enabled/default | cut -d : -f 1 | \
+head -n 1)
+((line++))
+sudo sed -i "$line i rewrite ^/redirect_me http://jtobyy.tech permanent;" /etc\
+/nginx/sites-enabled/default
+
+#custom error 404 page
+line=$(grep -n server_name /etc/nginx/sites-enabled/default | cut -d : -f 1 | \
+head -n 1)
+((line+=2))
+sudo sed -i "$line i error_page 404 http://jtobyy.tech/404.html;" /etc\
+/nginx/sites-enabled/default
+
+sudo service nginx restart
+#or sudo /etc/init.d/nginx restart
