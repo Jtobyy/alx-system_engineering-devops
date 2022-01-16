@@ -36,6 +36,8 @@ sudo sed -i "$line i rewrite ^/redirect_me http://jtobyy.tech permanent;" /etc\
 /nginx/sites-enabled/default
 
 #custom error 404 page
+echo -e "Ceci n'est pas une page" > "$val"/404.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
 line=$(grep -n server_name /etc/nginx/sites-enabled/default | cut -d : -f 1 | \
 head -n 1)
 ((line+=2))
