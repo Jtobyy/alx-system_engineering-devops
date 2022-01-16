@@ -38,7 +38,7 @@ echo "Ceci n'est pas une page" > "$val"/error404.html
 echo "Ceci n'est pas une page" > /var/www/html/error404.html
 newline=$(grep -n server_name /etc/nginx/sites-enabled/default | cut -d : -f 1 | head -n 1)
 ((newline++))
-sudo sed -i "$newline i error_page 404 http://jtobyy.tech/error404.html;" /etc/nginx/sites-enabled/default
+sudo sed -i "$newline i error_page 404 /error404.html;" /etc/nginx/sites-enabled/default
 
 sudo service nginx restart
 #or sudo /etc/init.d/nginx restart
