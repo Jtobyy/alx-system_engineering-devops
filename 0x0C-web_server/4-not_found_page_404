@@ -29,20 +29,16 @@ sed -i 's/listen \[::\]:[0-9]* default_server ipv6only=on/listen \[::\]:80 defau
 
 #edits the default in nginx/sites-enabled and allows redirection
 #from /redirect_me
-line=$(grep -n server_name /etc/nginx/sites-enabled/default | cut -d : -f 1 | \
-head -n 1)
+line=$(grep -n server_name /etc/nginx/sites-enabled/default | cut -d : -f 1 | head -n 1)
 ((line++))
-sudo sed -i "$line i rewrite ^/redirect_me http://jtobyy.tech permanent;" /etc\
-/nginx/sites-enabled/default
+sudo sed -i "$line i rewrite ^/redirect_me http://jtobyy.tech permanent;" /etc/nginx/sites-enabled/default
 
 #custom error 404 page
-echo -e "Ceci n'est pas une page" > "$val"/404.html
-echo "Ceci n'est pas une page" > /var/www/html/404.html
-line=$(grep -n server_name /etc/nginx/sites-enabled/default | cut -d : -f 1 | \
-head -n 1)
-((line+=2))
-sudo sed -i "$line i error_page 404 http://jtobyy.tech/404.html;" /etc\
-/nginx/sites-enabled/default
+echo "Ceci n'est pas une page" > "$val"/error404.html
+echo "Ceci n'est pas une page" > /var/www/html/error404.html
+newline=$(grep -n server_name /etc/nginx/sites-enabled/default | cut -d : -f 1 | head -n 1)
+((newline++))
+sudo sed -i "$newline i error_page 404 http://jtobyy.tech/error404.html;" /etc/nginx/sites-enabled/default
 
 sudo service nginx restart
 #or sudo /etc/init.d/nginx restart
