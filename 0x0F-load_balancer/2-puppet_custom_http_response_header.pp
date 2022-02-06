@@ -2,10 +2,6 @@
 # setting up a brand new ubuntu machine with nginx and
 # creating a custom HTTP header response, but with Puppet.
 
-# Get puppet stdlib module
-
-mod 'puppetlabs-stdlib', '4.9.1'
-
 package {'nginx':
   ensure => installed
 }
