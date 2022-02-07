@@ -2,6 +2,10 @@
 # setting up a brand new ubuntu machine with nginx and
 # creating a custom HTTP header response, but with Puppet.
 
+package {'apt':
+  ensure => latest
+}
+
 package {'nginx':
   ensure => installed
 }
