@@ -11,7 +11,7 @@ package {'nginx':
 }
 
 file {'/var/www/html/index.html':
-  ensure => file,
+  ensure  => file,
   content => 'Hello World!'
 }
 
@@ -20,7 +20,9 @@ exec {'port':
 }
 
 exec {'ipv6port':
-  command => "/usr/bin/sed -i 's/listen [::]:[0-9]* default_server ipv6only=on/listen [::]:80 default_server ipv6only=on/' /etc/nginx/sites-enabled/default"
+  command => "/usr/bin/sed -i 's/listen [::]:[0-9]* default_server \
+ipv6only=on/listen [::]:80 default_server ipv6only=on/' \
+/etc/nginx/sites-enabled/default"
 }
 
 exec {'newline':
