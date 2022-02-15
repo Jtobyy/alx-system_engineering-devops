@@ -2,9 +2,9 @@
 """
 Gets information of a given emplyee from a REST API
 """
-import urllib.request
-import sys
 import json
+import sys
+import urllib.request
 
 
 def main():
@@ -26,10 +26,10 @@ def main():
     res1 = json.loads(inres1)
     res2 = json.loads(inres2)
     for todo in res2:
-        if todo['completed'] == True:
+        if todo.get('completed') is True:
             task_done += 1
-            titles.append(todo['title'])
-    print(f"Empolyee {res1['name']} is done with tasks({task_done}/\
+            titles.append(todo.get('title'))
+    print(f"Empolyee {res1.get('name')} is done with tasks({task_done}/\
 {len(res2)}):")
     for title in titles:
         print(f'\t {title}')
