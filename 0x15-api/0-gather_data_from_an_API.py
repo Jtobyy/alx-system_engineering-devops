@@ -29,7 +29,7 @@ def main():
         if todo.get('completed') is True:
             task_done += 1
             titles.append(todo.get('title'))
-    print(f"Empolyee {res1.get('name')} is done with tasks({task_done}/\
+    print(f"Employee {res1.get('name')} is done with tasks({task_done}/\
 {len(res2)}):")
     for title in titles:
         print(f'\t {title}')
