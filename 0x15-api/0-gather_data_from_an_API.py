@@ -5,7 +5,6 @@ import json
 import sys
 import urllib.request
 
-
 if __name__ == "__main__":
     '''Gets information using urllib and prints out the info in a
 speciified format'''
