@@ -7,7 +7,7 @@ import sys
 import urllib.request
 
 
-def main():
+if __name__ == "__main__":
     """main function"""
     id = sys.argv[1]
     req1 = urllib.request.Request(
@@ -33,7 +33,3 @@ def main():
 {len(res2)}):")
     for title in titles:
         print(f'\t {title}')
-
-
-if __name__ == "__main__":
-    main()
