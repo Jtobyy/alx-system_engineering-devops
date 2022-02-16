@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-'''Gets information of a given emplyee from a REST API and displays
-this information'''
+'''A script that gets information of a given emplyee from
+a REST API and displays this information
+'''
 
 import json
 import sys
