@@ -8,7 +8,7 @@ import urllib.request
 
 if __name__ == '__main__':
     req1 = urllib.request.Request(
-        'https://jsonplaceholder.typicode.com/users/')
+        'https://jsonplaceholder.typicode.com/users')
     req2 = urllib.request.Request(
         'https://jsonplaceholder.typicode.com/todos')
     with urllib.request.urlopen(req1) as response:
@@ -29,9 +29,10 @@ if __name__ == '__main__':
                 for user in res1:
                     if user.get('id') == id:
                         tododict = {"username": user.get('username')}
+                        break
                 tododict["task"] = todo.get('title')
                 tododict["completed"] = todo.get('completed')
-            values.append(tododict)
+                values.append(tododict)
         totaldict[id] = values
         values = []
         id += 1
