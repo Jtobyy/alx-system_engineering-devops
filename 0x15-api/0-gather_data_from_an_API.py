@@ -9,16 +9,13 @@ import urllib.request
 if __name__ == "__main__":
     id = sys.argv[1]
     req1 = urllib.request.Request(
-        f'https://jsonplaceholder.typicode.com/users/{id}'
-        )
+        f'https://jsonplaceholder.typicode.com/users/{id}')
     req2 = urllib.request.Request(
-        f'https://jsonplaceholder.typicode.com/users/{id}/todos'
-        )
+        f'https://jsonplaceholder.typicode.com/users/{id}/todos')
     with urllib.request.urlopen(req1) as response:
         inres1 = response.read().decode('utf-8')
     with urllib.request.urlopen(req2) as response:
         inres2 = response.read().decode('utf-8')
-
     task_done = 0
     titles = []
     res1 = json.loads(inres1)
