@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""
-Gets information of a given emplyee from a REST API
-"""
+'''Gets information of a given emplyee from a REST API and displays
+this information'''
 import json
 import sys
 import urllib.request
 
 
 if __name__ == "__main__":
-    """main function"""
+    '''Gets information using urllib and prints out the info in a
+speciified format'''
     id = sys.argv[1]
     req1 = urllib.request.Request(
         f'https://jsonplaceholder.typicode.com/users/{id}'
