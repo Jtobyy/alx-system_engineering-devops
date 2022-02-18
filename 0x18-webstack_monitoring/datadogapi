@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+# Curl command
+curl -X GET "https://api.datadoghq.com/api/v1/hosts" \
+-H "Content-Type: application/json" \
+-H "DD-API-KEY: 7c4819cbf01c4250e922a3bf7a590e3a" \
+-H "DD-APPLICATION-KEY: 8d2060d3889568148404d2a969d7fe4f55808760"
