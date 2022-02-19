@@ -6,3 +6,6 @@ sed -i 's/listen [0-9]* default_server/listen 80 default_server/' /etc/nginx/sit
 #does the same for the ipv6 address
 #listen [::]:80 default_server ipv6only=on;
 sed -i 's/listen \[::\]:[0-9]* default_server ipv6only=on/listen \[::\]:80 default_server ipv6only=on/' /etc/nginx/sites-enabled/default
+
+sudo service nginx restart
+#or sudo /etc/init.d/nginx restart
