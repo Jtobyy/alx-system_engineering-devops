@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#makes sure nginx default listens at port 80;
+
+sed -i 's/listen [0-9]* default_server/listen 80 default_server/' /etc/nginx/sites-enabled/default
+
+#does the same for the ipv6 address
+#listen [::]:80 default_server ipv6only=on;
+sed -i 's/listen \[::\]:[0-9]* default_server ipv6only=on/listen \[::\]:80 default_server ipv6only=on/' /etc/nginx/sites-enabled/default
