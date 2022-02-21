@@ -17,7 +17,7 @@ sudo apt-get -y install nginx
 val=$(grep -m 1 'root /' /etc/nginx/sites-enabled/default | tr -d ";" | cut -f 1 -d " " --complement)
 
 # replace the index.html text the with required text
-echo -e "Hello World!\n" > $val/index.html
+echo -e "Hello World!\n" > "$val"/index.html
 # just in case
 echo -e "Hello World!\n" > /var/www/html/index.html
 
