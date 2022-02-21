@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
-#makes sure nginx default listens at port 80;
+#Configures a new Ubuntu machine to run Nginx
 
+#install Nginx
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+
+#firewall configuration
+#sudo ufw enable
+#sudo ufw allow 'Nginx HTTP'
+
+#makes sure default listens at port 80;
 sed -i 's/listen [0-9]* default_server/listen 80 default_server/' /etc/nginx/sites-enabled/default
 
 #does the same for the ipv6 address
