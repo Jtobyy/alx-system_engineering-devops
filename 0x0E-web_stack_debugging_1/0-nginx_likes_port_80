@@ -3,12 +3,23 @@
 
 #install Nginx
 sudo apt-get -y update
-sudo apt-get -y upgrade
 sudo apt-get -y install nginx
 
 #firewall configuration
 #sudo ufw enable
 #sudo ufw allow 'Nginx HTTP'
+
+#When querying Nginx at its root / with a GET
+#request (requesting a page) using curl, it must
+#return a page that contains the string Hello World!
+
+# get the default path for nginx static files
+val=$(grep -m 1 'root /' /etc/nginx/sites-enabled/default | tr -d ";" | cut -f 1 -d " " --complement)
+
+# replace the index.html text the with required text
+echo -e "Hello World!\n" > $val/index.html
+# just in case
+echo -e "Hello World!\n" > /var/www/html/index.html
 
 #makes sure default listens at port 80;
 sed -i 's/listen [0-9]* default_server/listen 80 default_server/' /etc/nginx/sites-enabled/default
