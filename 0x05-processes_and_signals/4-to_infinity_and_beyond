@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # displays To infinity and beyond indefinitely.
-while true;
+((i=0));
+while (("$i" < 3));
 do
     echo "To infinity and beyond"
+    sleep 2
+    ((i++))
 done
